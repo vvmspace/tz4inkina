@@ -10,7 +10,9 @@ class Post extends Model
     protected $fillable = ['title', 'body', 'user_id'];
 
     static function stats(){
-        return ['a' => 'b'];
+        $last = Post::orderBy('created_at', 'desc')->first();
+        $first = Post::first();
+        return ['first' => $first, 'last' => $last, 'count' => Post::count()];
     }
 
     public function user()
