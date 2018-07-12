@@ -29,7 +29,7 @@
     @foreach($posts as $post)
         <div class="blog-post">
             <h2 class="blog-post-title">{{ $post->title }}</h2>
-            <p class="blog-post-meta">Опубликован {{ $post->created_at }}. Автор: {{ $post->user->name }}</p>
+            <p class="blog-post-meta">Опубликован {{ $post->created_at->format('Y.m.d') }}. Автор: {{ $post->user->name }}</p>
 
             <p>{{ $post->body }}</p>
         </div>
