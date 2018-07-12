@@ -1,4 +1,10 @@
 @extends('layout')
+@section('page-title')
+    Регистрация
+@endsection
+@section('page-description')
+    Присоединяйтесь к большому сообществу
+@endsection
 
 @section('content')
     <form action="{{ route('register') }}" method="POST">
