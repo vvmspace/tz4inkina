@@ -18,18 +18,21 @@
     <div class="container">
         <nav class="nav">
             <a class="nav-link active" href="#">Стена</a>
-            <a class="nav-link" href="#">Зарегистрироваться</a>
-            <a class="nav-link" href="#">Войти</a>
-            <span class="nav-link ml-auto">@Иван</span>
-            <a class="nav-link" href="#">Выйти</a>
+            @guest
+            <a class="nav-link" href="{{ route('register') }}">Зарегистрироваться</a>
+            <a class="nav-link" href="{{ route('login') }}">Войти</a>
+            @else
+            <span class="nav-link ml-auto">{{ '@' . Auth::user()->name }}</span>
+            <a class="nav-link" href="{{ route('logout') }}">Выйти</a>
+            @endguest
         </nav>
     </div>
 </div>
 
 <div class="blog-header">
     <div class="container">
-        <h1 class="blog-title">Стена</h1>
-        <p class="lead blog-description">Место, где каждый может высказаться</p>
+        <h1 class="blog-title">@yield('page-title')</h1>
+        <p class="lead blog-description">@yield('page-description')</p>
     </div>
 </div>
 
