@@ -1,4 +1,7 @@
-
+@php
+use App\Post;
+$stats = Post::stats();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
