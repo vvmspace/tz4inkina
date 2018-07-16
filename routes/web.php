@@ -18,4 +18,8 @@ Route::resource('/', 'IndexController');
 //});
 
 Auth::routes();
+
+// Ребят, за register-success - простите,
+// но это он в основной шаблоне не влазит, не стал костылять, заюзал коробку
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
